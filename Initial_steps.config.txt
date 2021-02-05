@@ -1,0 +1,41 @@
+yarn create next-app --example with-styled-components <app_name>
+cd <app_name>
+
+ yarn add typescript @types/react @types/node -D
+
+ yarn dev
+ # criará o arquivos
+    tsconfig.json
+
+yarn add eslint -D
+yarn eslint --init
+# configurar o eslint
+# pacotes adicionais com npm, remover o package-lock.json
+
+yarn
+# para instalar os pacotes adicionais com o yarn
+
+##  Fazer as configurações do eslint
+### arquivos:
+    .eslintrc.json
+    .eslintignore
+
+yarn add -D prettier eslint-plugin-prettier eslint-config-prettier
+### Arquivo:
+    prettier.config.js
+
+yarn dev
+
+##  Fazer as configurações do prettier
+
+yarn add styled-components
+Arquivo: babel.config.js
+
+yarn add -D @types/styled-components
+
+yarn add next-images
+# Tratamentos de imagens
+
+yarn add -D babel-plugin-inline-react-svg
+# Coloca imagens svg inline no build e serve para melhorar performance
+
