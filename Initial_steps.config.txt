@@ -1,3 +1,5 @@
+# Configuração tirada de https://youtu.be/1nVUfZg2dSA
+
 yarn create next-app --example with-styled-components <app_name>
 cd <app_name>
 
