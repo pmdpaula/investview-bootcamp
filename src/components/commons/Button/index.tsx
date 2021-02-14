@@ -21,7 +21,12 @@ const ButtonDefault = css<ButtonGhostProps>`
     get(theme, `colors.${variant}.color`)};
 `
 
-export const Button = styled.button`
+// interface ButtonProps {
+//   theme: DefaultTheme
+//   ghost: boolean
+// }
+
+export const Button = styled.button<{ ghost: boolean }>`
   border: 0;
   cursor: pointer;
   padding: 12px 26px;
