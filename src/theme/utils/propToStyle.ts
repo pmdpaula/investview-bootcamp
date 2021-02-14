@@ -1,8 +1,8 @@
 import { css } from 'styled-components'
 import { breakpointsMedia } from './breakpointsMedia'
 
-export function propToStyle(propName) {
-  return props => {
+export function propToStyle(propName: string): Record<string, any> {
+  return (props: { [x: string]: any }) => {
     const propValue = props[propName]
 
     if (typeof propValue === 'object') {

@@ -1,11 +1,13 @@
 import { ThemeProvider } from 'styled-components'
-import theme from '../theme'
 import GlobalStyle from '../theme/GlobalStyle'
+import { AppProps } from 'next/app'
+
+import theme from '../theme'
 import Head from 'next/head'
 
 // const theme =
 
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <>
       <Head>

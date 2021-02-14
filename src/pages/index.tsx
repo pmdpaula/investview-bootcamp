@@ -5,7 +5,7 @@ import { Button } from '../components/commons/Button'
 import { Grid } from '../components/foundation/layout/Grid'
 import { Box } from '../components/foundation/layout/Box'
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
     <Box
       flex={1}
