@@ -1,15 +1,20 @@
-import styled, { css } from 'styled-components'
+import styled, { css, DefaultTheme } from 'styled-components'
 import get from 'lodash/get'
 import { TextStyleVariants } from '../../foundation/Text'
 import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia'
 import { propToStyle } from '../../../theme/utils/propToStyle'
 
-const ButtonGhost = css`
+interface ButtonGhostProps {
+  theme: DefaultTheme
+  variant: string
+}
+
+const ButtonGhost = css<ButtonGhostProps>`
   color: ${({ theme, variant }) => get(theme, `colors.${variant}.color`)};
   background-color: transparent;
 `
 
-const ButtonDefault = css`
+const ButtonDefault = css<ButtonGhostProps>`
   color: ${({ theme, variant }) =>
     get(theme, `colors.${variant}.contrastText`)};
   background-color: ${({ theme, variant }) =>
