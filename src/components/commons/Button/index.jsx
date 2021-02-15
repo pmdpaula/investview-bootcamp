@@ -4,17 +4,17 @@ import { TextStyleVariants } from '../../foundation/Text'
 import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia'
 import { propToStyle } from '../../../theme/utils/propToStyle'
 
-interface ButtonGhostProps {
-  theme: DefaultTheme
-  variant: string
-}
+// interface ButtonGhostProps {
+//   theme: DefaultTheme
+//   variant: string
+// }
 
-const ButtonGhost = css<ButtonGhostProps>`
+const ButtonGhost = css`
   color: ${({ theme, variant }) => get(theme, `colors.${variant}.color`)};
   background-color: transparent;
 `
 
-const ButtonDefault = css<ButtonGhostProps>`
+const ButtonDefault = css`
   color: ${({ theme, variant }) =>
     get(theme, `colors.${variant}.contrastText`)};
   background-color: ${({ theme, variant }) =>
@@ -26,7 +26,7 @@ const ButtonDefault = css<ButtonGhostProps>`
 //   ghost: boolean
 // }
 
-export const Button = styled.button<{ ghost: boolean }>`
+export const Button = styled.button`
   border: 0;
   cursor: pointer;
   padding: 12px 26px;

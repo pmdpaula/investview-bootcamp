@@ -1,3 +1,4 @@
+// export const Logo = (): JSX.Element => {
 export const Logo = () => {
   return (
     <svg

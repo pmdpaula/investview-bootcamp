@@ -3,7 +3,7 @@ import { Text } from '../../foundation/Text'
 import { Button } from '../Button'
 import { MenuWrapper } from './styles/MenuWrapper'
 
-export default function Menu() {
+const Menu = () => {
   return (
     <MenuWrapper>
       <MenuWrapper.LeftSide>
@@ -41,3 +41,5 @@ export default function Menu() {
     </MenuWrapper>
   )
 }
+
+export default Menu
