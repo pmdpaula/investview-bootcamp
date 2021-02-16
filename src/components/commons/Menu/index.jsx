@@ -1,9 +1,18 @@
+import { useContext } from 'react'
+import { ThemeContext } from 'styled-components'
 import { Logo } from '../../../theme/Logo'
 import { Text } from '../../foundation/Text'
 import { Button } from '../Button'
 import { MenuWrapper } from './styles/MenuWrapper'
+import SwitchMode from '../SwitchMode'
 
-const Menu = () => {
+// interface Props {
+//   toggleTheme(): void;
+// }
+
+const Menu = ({ toggleTheme }) => {
+  // const { colors } = useContext(ThemeContext)
+
   return (
     <MenuWrapper>
       <MenuWrapper.LeftSide>
@@ -24,13 +33,13 @@ const Menu = () => {
           </li>
         ))}
       </MenuWrapper.CentralSide>
+
       <MenuWrapper.RightSide>
-        {' '}
-        {/* MenuWrapper.RightSide */}
+        <SwitchMode toggleTheme={toggleTheme} />
         <Button
           type="button"
           variant="primary.main"
-          style={{ marginRight: '16px' }}
+          style={{ margin: '0 8px' }}
         >
           <Text variant="buttonText">Entrar</Text>
         </Button>

@@ -11,7 +11,7 @@ export const MenuWrapper = styled.nav`
   padding: 8px 28px;
   margin-bottom: 8px;
   background-color: #29434e;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: ${({ theme }) => theme.boxShadow};
   height: 75px;
 
   ${breakpointsMedia({
@@ -115,6 +115,7 @@ MenuWrapper.RightSide = styled.div`
   flex: 1;
   order: 2;
   justify-content: flex-end;
+  align-items: center;
   ${breakpointsMedia({
     md: css`
       order: initial;

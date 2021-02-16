@@ -5,8 +5,11 @@ import { Button } from '../components/commons/Button'
 import { Grid } from '../components/foundation/layout/Grid'
 import { Box } from '../components/foundation/layout/Box'
 
+// interface Props {
+//   toggleTheme(): void;
+// }
 // const Home: React.FC = () => {
-const Home = () => {
+const Home = ({ toggleTheme }) => {
   return (
     <Box
       flex={1}
@@ -18,7 +21,7 @@ const Home = () => {
       // backgroundRepeat="no-repeat"
       // backgroundPosition="bottom right"
     >
-      <Menu />
+      <Menu toggleTheme={toggleTheme} />
 
       <Grid.Container
         marginTop={{
@@ -48,7 +51,7 @@ const Home = () => {
           <Text
             variant="title"
             tag="h1"
-            color="tertiary.main"
+            color="text.head1"
             textAlign={{
               xs: 'center',
               md: 'right'
@@ -60,7 +63,7 @@ const Home = () => {
           <Text
             variant="paragraph1"
             tag="p"
-            color="tertiary.light"
+            color="text.main"
             textAlign={{
               xs: 'center',
               md: 'right'
