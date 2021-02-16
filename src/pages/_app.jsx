@@ -14,7 +14,6 @@ const usePersistedTheme = createPersistedState('theme')
 
 // export default function App({ Component, pageProps }: AppProps): JSX.Element {
 const App = ({ Component, pageProps }) => {
-  const initialTheme = ThemeDark
   // const [theme, setTheme] = useState(ThemeDark)
   const [theme, setTheme] = usePersistedTheme(ThemeDark)
   // const [theme, setTheme] = usePersistedState('theme', ThemeDark)
