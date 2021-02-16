@@ -1,5 +1,8 @@
+import Image from 'next/image'
+
 import Footer from '../components/commons/Footer'
 import Menu from '../components/commons/Menu'
+
 import { Text } from '../components/foundation/Text'
 import { Button } from '../components/commons/Button'
 import { Grid } from '../components/foundation/layout/Grid'
@@ -93,7 +96,13 @@ const Home = ({ toggleTheme }) => {
           justifyContent="center"
           flexDirection="column"
         >
-          <img src="/charts-main.png" alt="Charts" />
+          <Image
+            src="/charts-main-lg.png"
+            alt="Charts"
+            layout="intrinsic"
+            width={650}
+            height={486 / (800 / 650)}
+          />
           {/* </Grid.Col> */}
           {/* <Grid.Col value={{ xs: 12, md: 6 }}></Grid.Col> */}
         </Grid.Row>

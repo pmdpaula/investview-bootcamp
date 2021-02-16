@@ -33,9 +33,9 @@ export const TextStyleVariants = {
   paragraph1,
   buttonText: css`
     ${({ theme }) => css`
-      font-size: ${theme.typographyVariants.buttonTextXs.fontSize};
-      font-weight: ${theme.typographyVariants.buttonTextXs.fontWeight};
-      line-height: ${theme.typographyVariants.buttonTextXs.lineHeight};
+      font-size: ${theme.typographyVariants.buttonTextXS.fontSize};
+      font-weight: ${theme.typographyVariants.buttonTextXS.fontWeight};
+      line-height: ${theme.typographyVariants.buttonTextXS.lineHeight};
     `}
     ${breakpointsMedia({
       lg: css`
@@ -59,6 +59,22 @@ export const TextStyleVariants = {
           font-size: ${theme.typographyVariants.title.fontSize};
           font-weight: ${theme.typographyVariants.title.fontWeight};
           line-height: ${theme.typographyVariants.title.lineHeight};
+        `}
+      `
+    })}
+  `,
+  subTitle: css`
+    ${({ theme }) => css`
+      font-size: ${theme.typographyVariants.subTitleXS.fontSize};
+      font-weight: ${theme.typographyVariants.subTitleXS.fontWeight};
+      line-height: ${theme.typographyVariants.subTitleXS.lineHeight};
+    `}
+    ${breakpointsMedia({
+      md: css`
+        ${({ theme }) => css`
+          font-size: ${theme.typographyVariants.subTitle.fontSize};
+          font-weight: ${theme.typographyVariants.subTitle.fontWeight};
+          line-height: ${theme.typographyVariants.subTitle.lineHeight};
         `}
       `
     })}
@@ -94,7 +110,9 @@ Text.propTypes = {
   tag: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'li', 'a', 'span']),
   variant: PropTypes.oneOf([
     'title',
+    'subTitle',
     'paragraph1',
+    'paragraph2',
     'smallestException',
     'buttonText'
   ])

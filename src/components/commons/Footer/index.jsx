@@ -1,4 +1,5 @@
 import styled, { DefaultTheme } from 'styled-components'
+import { Text } from '../../foundation/Text'
 
 // const FooterWrapper = styled.footer<{ theme: DefaultTheme }>`
 const FooterWrapper = styled.footer`
@@ -35,12 +36,14 @@ const Footer = props => {
           alt="Logo Alura"
         />
       </a>
-      <p>
+      <Text variant="paragraph1" tag="p" color="text.main">
         Orgulhosamente criado durante o{' '}
         <a href="https://www.alura.com.br/">
-          <span>Bootcamp Alura JAM Stack</span>
+          <Text variant="paragraph1" tag="span" color="text.head1">
+            Bootcamp Alura JAM Stack
+          </Text>
         </a>
-      </p>
+      </Text>
     </FooterWrapper>
   )
 }

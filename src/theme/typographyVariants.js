@@ -12,9 +12,14 @@ export const typographyVariants = {
   },
   // [subTitle]
   subTitle: {
-    fontSize: '24px',
+    fontSize: '26px',
     fontWeight: '500',
     lineHeight: 1.25 // 125%
+  },
+  subTitleXS: {
+    fontSize: '20px',
+    fontWeight: '300',
+    lineHeight: 1.1 // 110%
   },
   // [paragraph1]
   paragraph1: {
@@ -41,7 +46,7 @@ export const typographyVariants = {
     lineHeight: 1 // 100%
   },
   // [buttonText]
-  buttonTextXs: {
+  buttonTextXS: {
     fontSize: '14px',
     fontWeight: '500',
     lineHeight: 1 // 100%

@@ -29,7 +29,7 @@ const ButtonDefault = css`
 export const Button = styled.button`
   border: 0;
   cursor: pointer;
-  padding: 12px 26px;
+  padding: 8px 20px;
   font-weight: bold;
   opacity: 1;
   transition: opacity ${({ theme }) => theme.transition};
@@ -49,7 +49,7 @@ export const Button = styled.button`
 
   &:hover,
   &:focus {
-    opacity: 0.5;
+    opacity: 0.7;
   }
 
   ${propToStyle('margin')}
