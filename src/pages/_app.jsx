@@ -1,20 +1,23 @@
-// import { useState } from 'react'
 import { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
+import createPersistedState from 'use-persisted-state'
 // import { AppProps } from 'next/app'
 
 import GlobalStyle from '../theme/GlobalStyle'
-// import theme from '../theme'
 import ThemeLight from '../theme/light'
 import ThemeDark from '../theme/dark'
 
-import Head from 'next/head'
 // import usePersistedState from '../utils/usePersistedState'
+import Head from 'next/head'
+
+const usePersistedTheme = createPersistedState('theme')
 
 // export default function App({ Component, pageProps }: AppProps): JSX.Element {
 const App = ({ Component, pageProps }) => {
-  // const [themeMode, setThemeMode] = usePersistedState('theme', ThemeDark)
-  const [theme, setTheme] = useState(ThemeDark)
+  const initialTheme = ThemeDark
+  // const [theme, setTheme] = useState(ThemeDark)
+  const [theme, setTheme] = usePersistedTheme(ThemeDark)
+  // const [theme, setTheme] = usePersistedState('theme', ThemeDark)
 
   const toggleTheme = () => {
     setTheme(theme.title === 'light' ? ThemeDark : ThemeLight)
