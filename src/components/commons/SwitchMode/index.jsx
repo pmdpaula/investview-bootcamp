@@ -18,8 +18,8 @@ const SwitchMode = ({ toggleTheme }) => {
       height={20}
       // weigth={200}
       handleDiameter={25}
-      onColor={colors.backgroundColor}
-      offColor={colors.secondary.main.color}
+      onColor={colors.background.main.color}
+      offColor={colors.background.main.color}
       boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
       activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
     />

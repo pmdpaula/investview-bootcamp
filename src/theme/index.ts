@@ -61,10 +61,19 @@ export const breakpoints = {
 // }
 
 interface ColorsProps {
-  backgroundColor: string
-  textColor: string
   background: {
-    light: {
+    main: {
+      color: string
+    }
+    secondary: {
+      color: string
+    }
+  }
+  text: {
+    head1: {
+      color: string
+    }
+    head2: {
       color: string
     }
     main: {

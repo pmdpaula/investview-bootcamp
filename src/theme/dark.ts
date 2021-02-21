@@ -2,7 +2,14 @@ import { typographyVariants } from './typographyVariants'
 import { breakpoints } from './index'
 
 export const colors = {
-  backgroundColor: '#000a12',
+  background: {
+    main: {
+      color: '#000a12'
+    },
+    secondary: {
+      color: '#102027'
+    }
+  },
   text: {
     head1: {
       color: '#819CA9'
@@ -16,7 +23,7 @@ export const colors = {
   },
   borders: {
     main: {
-      color: '#F1F1F1'
+      color: '#ffad42'
     }
   },
   primary: {
@@ -62,7 +69,7 @@ export default {
   colors,
   typographyVariants,
   breakpoints,
-  borderRadius: '12px',
+  borderRadius: '6px',
   transition: '200ms ease-in-out',
   fontFamily: "'Roboto', sans-serif",
   boxShadow: '0px 2px 6px rgba(255, 255, 255, 0.5)'

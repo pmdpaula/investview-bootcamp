@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import { useRouter } from 'next/router'
 import { ThemeContext } from 'styled-components'
 import { Logo } from '../../../theme/Logo'
 import { Text } from '../../foundation/Text'
@@ -12,6 +13,7 @@ import SwitchMode from '../SwitchMode'
 
 const Menu = ({ toggleTheme }) => {
   // const { colors } = useContext(ThemeContext)
+  const router = useRouter()
 
   return (
     <MenuWrapper>
@@ -19,8 +21,6 @@ const Menu = ({ toggleTheme }) => {
         <Logo />
       </MenuWrapper.LeftSide>
       <MenuWrapper.CentralSide as="ul">
-        {' '}
-        {/* MenuWrapper.CentralSide */}
         {[
           { url: '/', name: 'Home' },
           { url: '/faq', name: 'Perguntas Frequentes' },
@@ -43,7 +43,11 @@ const Menu = ({ toggleTheme }) => {
         >
           <Text variant="buttonText">Entrar</Text>
         </Button>
-        <Button type="button" variant="secondary.main">
+        <Button
+          type="button"
+          variant="secondary.main"
+          onClick={() => router.push('/singup')}
+        >
           <Text variant="buttonText">Cadastrar</Text>
         </Button>
       </MenuWrapper.RightSide>
