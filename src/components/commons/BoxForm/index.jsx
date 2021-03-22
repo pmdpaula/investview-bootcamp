@@ -1,8 +1,9 @@
-import { useContext } from 'react'
-import styled, { css, ThemeContext } from 'styled-components'
-import get from 'lodash/get'
+import { useContext } from 'react';
+import styled, { css, ThemeContext } from 'styled-components';
+import get from 'lodash/get';
 
-import { Text } from '../../foundation/Text'
+import { PropTypes } from 'prop-types';
+import Text from '../../foundation/Text';
 
 const OuterBoxStyle = css`
   /* padding-right: 16px;
@@ -20,11 +21,11 @@ const OuterBoxStyle = css`
   border: 1px solid ${({ theme }) => theme.borderColor};
   border-radius: ${({ theme }) => theme.borderRadius};
   box-shadow: ${({ theme }) => theme.boxShadow};
-`
+`;
 
 const OutterBox = styled.div`
   ${OuterBoxStyle}
-`
+`;
 
 const HeaderBoxStyle = css`
   position: relative;
@@ -34,18 +35,21 @@ const HeaderBoxStyle = css`
   border-radius: ${({ theme }) => theme.borderRadius}
     ${({ theme }) => theme.borderRadius} 0 0;
   width: 98%;
-`
+`;
 
 const HeaderBox = styled.div`
   ${HeaderBoxStyle}
-`
+`;
 
-const BoxForm = ({ variant, ...props }) => {
-  return (
-    <OutterBox variant={variant}>
-      <HeaderBox variant="secondary.main">{props.children}</HeaderBox>
-    </OutterBox>
-  )
-}
+const BoxForm = ({ variant, children, ...props }) => (
+  <OutterBox variant={variant}>
+    <HeaderBox variant="secondary.main">{children}</HeaderBox>
+  </OutterBox>
+);
 
-export default BoxForm
+export default BoxForm;
+
+BoxForm.propTypes = {
+  variant: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};

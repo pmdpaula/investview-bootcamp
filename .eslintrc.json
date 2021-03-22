@@ -1,42 +1,50 @@
 {
   "env": {
-    "browser": true,
-    "es2021": true,
-    "node": true,
-    "jest": true
+      "browser": true,
+      "es2020": true,
+      "node": true
   },
   "extends": [
-    "plugin:react/recommended",
-    "standard",
-    "plugin:@typescript-eslint/recommended", // TypeScript rules
-    "prettier/@typescript-eslint", // Prettier plugin
-    "prettier/standard", // Prettier plugin
-    "prettier/react"
-
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "airbnb",
+      "eslint-config-prettier",
+      "prettier/react"
   ],
-  "parser": "@typescript-eslint/parser",
+  "parser": "babel-eslint",
   "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": 12,
-    "sourceType": "module"
+      "ecmaFeatures": {
+          "jsx": true
+      },
+      "ecmaVersion": 12,
+      "sourceType": "module"
   },
   "plugins": [
-    "react",
-    "@typescript-eslint",
-    "prettier"
+      "react",
+      "eslint-plugin-prettier"
   ],
-  "rules": {
+    "rules": {
     // "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
 
     // We will use TypeScript's types for component props instead
-    "react/prop-types": "off",
+    // "react/prop-types": "off",
+
+    "import/prefer-default-export": "off",
 
     // No need to import React when using Next.js
     "react/react-in-jsx-scope": "off",
 
-    "prettier/prettier": ["error"],
-    "space-before-function-paren": "off"
+    // "implicit-arrow-linebreak": ["error", "below"],
+
+    "prettier/prettier": ["error", {}, { "usePrettierrc": true }],
+    // "space-before-function-paren": "off",
+    "object-curly-newline": "off",
+    "implicit-arrow-linebreak": "off",
+    // "comma-dangle": "off",
+    "arrow-parens": "off",
+    "react/jsx-props-no-spreading": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "no-unused-vars": "warn"
   }
 }
