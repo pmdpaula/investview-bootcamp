@@ -1,5 +1,5 @@
-import styled, { DefaultTheme } from 'styled-components'
-import { Text } from '../../foundation/Text'
+import styled, { DefaultTheme } from 'styled-components';
+import Text from '../../foundation/Text';
 
 // const FooterWrapper = styled.footer<{ theme: DefaultTheme }>`
 const FooterWrapper = styled.footer`
@@ -23,29 +23,26 @@ const FooterWrapper = styled.footer`
       opacity: 0.5;
     }
   }
-`
+`;
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-const Footer = props => {
-  return (
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    <FooterWrapper {...props}>
+const Footer = props => (
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  <FooterWrapper {...props}>
+    <a href="https://www.alura.com.br/">
+      <img
+        src="https://www.alura.com.br/assets/img/alura-logo.svg"
+        alt="Logo Alura"
+      />
+    </a>
+    <Text variant="paragraph1" tag="p" color="text.primary">
+      Orgulhosamente criado durante o{' '}
       <a href="https://www.alura.com.br/">
-        <img
-          src="https://www.alura.com.br/assets/img/alura-logo.svg"
-          alt="Logo Alura"
-        />
+        <Text variant="paragraph1" tag="span" color="text.head1">
+          Bootcamp Alura JAM Stack
+        </Text>
       </a>
-      <Text variant="paragraph1" tag="p" color="text.main">
-        Orgulhosamente criado durante o{' '}
-        <a href="https://www.alura.com.br/">
-          <Text variant="paragraph1" tag="span" color="text.head1">
-            Bootcamp Alura JAM Stack
-          </Text>
-        </a>
-      </Text>
-    </FooterWrapper>
-  )
-}
+    </Text>
+  </FooterWrapper>
+);
 
-export default Footer
+export default Footer;

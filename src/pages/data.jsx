@@ -1,9 +1,10 @@
 import Navbar from '../components/commons/Navbar';
 
-const Sobre = () => (
+const NewData = () => (
   <>
     <Navbar />
+    <h1>Dados</h1>
   </>
 );
 
-export default Sobre;
+export default NewData;

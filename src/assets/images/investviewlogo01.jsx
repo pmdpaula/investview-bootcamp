@@ -1,6 +1,6 @@
 export const InvestViewLogo = () => {
-  const imgWidth = 200
-  const imgHeight = imgWidth / 2.06
+  const imgWidth = 200;
+  const imgHeight = imgWidth / 2.06;
   return (
     <svg
       width={imgWidth}
@@ -49,5 +49,5 @@ export const InvestViewLogo = () => {
         </filter>
       </defs>
     </svg>
-  )
-}
+  );
+};

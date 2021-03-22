@@ -1,20 +1,20 @@
-import { useState } from 'react'
-import { ThemeProvider } from 'styled-components'
+import { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
 // import { AppProps } from 'next/app'
 
-import GlobalStyle from '../theme/GlobalStyle'
-import ThemeLight from '../theme/light'
-import ThemeDark from '../theme/dark'
-
-import Head from 'next/head'
+import Head from 'next/head';
+import GlobalStyle from '../theme/GlobalStyle';
+import ThemeLight from '../theme/light';
+import ThemeDark from '../theme/dark';
 
 // export default function App({ Component, pageProps }: AppProps): JSX.Element {
+// eslint-disable-next-line react/prop-types
 const App = ({ Component, pageProps }) => {
-  const [theme, setTheme] = useState(ThemeDark)
+  const [theme, setTheme] = useState(ThemeDark);
 
   const toggleTheme = () => {
-    setTheme(theme.title === 'light' ? ThemeDark : ThemeLight)
-  }
+    setTheme(theme.title === 'light' ? ThemeDark : ThemeLight);
+  };
 
   return (
     <>
@@ -32,7 +32,7 @@ const App = ({ Component, pageProps }) => {
         <Component toggleTheme={toggleTheme} {...pageProps} />
       </ThemeProvider>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

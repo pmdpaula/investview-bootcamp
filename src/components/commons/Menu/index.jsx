@@ -1,11 +1,12 @@
-import { useContext } from 'react'
-import { useRouter } from 'next/router'
-import { ThemeContext } from 'styled-components'
-import { Logo } from '../../../theme/Logo'
-import { Text } from '../../foundation/Text'
-import { Button } from '../Button'
-import { MenuWrapper } from './styles/MenuWrapper'
-import SwitchMode from '../SwitchMode'
+import { useContext } from 'react';
+import { useRouter } from 'next/router';
+import { ThemeContext } from 'styled-components';
+import { PropTypes } from 'prop-types';
+import Logo from '../../../theme/Logo';
+import Text from '../../foundation/Text';
+import Button from '../Button';
+import { MenuWrapper } from './styles/MenuWrapper';
+import SwitchMode from '../SwitchMode';
 
 // interface Props {
 //   toggleTheme(): void;
@@ -13,7 +14,7 @@ import SwitchMode from '../SwitchMode'
 
 const Menu = ({ toggleTheme }) => {
   // const { colors } = useContext(ThemeContext)
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <MenuWrapper>
@@ -24,7 +25,7 @@ const Menu = ({ toggleTheme }) => {
         {[
           { url: '/', name: 'Home' },
           { url: '/faq', name: 'Perguntas Frequentes' },
-          { url: '/sobre', name: 'Sobre' }
+          { url: '/sobre', name: 'Sobre' },
         ].map(link => (
           <li key={link.url}>
             <Text variant="smallestException" tag="a" href={link.url}>
@@ -52,7 +53,11 @@ const Menu = ({ toggleTheme }) => {
         </Button>
       </MenuWrapper.RightSide>
     </MenuWrapper>
-  )
-}
+  );
+};
 
-export default Menu
+export default Menu;
+
+Menu.propTypes = {
+  toggleTheme: PropTypes.func.isRequired,
+};
