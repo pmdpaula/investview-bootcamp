@@ -2,6 +2,7 @@
 import styled, { css } from 'styled-components';
 import get from 'lodash/get';
 import PropTypes from 'prop-types';
+
 import Link from '../../commons/Link/index';
 import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
 import propToStyle from '../../../theme/utils/propToStyle';

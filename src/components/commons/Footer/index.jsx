@@ -1,48 +1,83 @@
-import styled, { DefaultTheme } from 'styled-components';
+import styled, { ThemeContext, css } from 'styled-components';
+import { useState, useContext, useEffect } from 'react';
+import ReactTooltip from 'react-tooltip';
+
+import * as FaIcons from 'react-icons/fa';
+
 import Text from '../../foundation/Text';
+import Box from '../../foundation/layout/Box';
+
+import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
 
 // const FooterWrapper = styled.footer<{ theme: DefaultTheme }>`
 const FooterWrapper = styled.footer`
-  padding: 14px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 0.6rem 2.2rem;
+  width: 100vw;
+  height: 3.6rem;
   display: flex;
   align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  padding-right: 28px;
-  padding-left: 28px;
-  img {
-    width: 58px;
-    margin-right: 23px;
-  }
-  a {
-    color: ${({ theme }) => theme.colors.primary.main.color};
-    text-decoration: none;
-    transition: 0.3s;
-    &:hover,
-    &:focus {
-      opacity: 0.5;
-    }
+  justify-content: space-evenly;
+  /* border-radius: 4px; */
+  border-top: 1px solid ${({ theme }) => theme.colors.borders.primary.color}
+
+  ${breakpointsMedia({
+    lg: css`
+      height: 4.8rem;
+    `,
+  })}
+
   }
 `;
 
-const Footer = props => (
+const Footer = props => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const { colors, title } = useContext(ThemeContext);
   // eslint-disable-next-line react/jsx-props-no-spreading
-  <FooterWrapper {...props}>
-    <a href="https://www.alura.com.br/">
-      <img
-        src="https://www.alura.com.br/assets/img/alura-logo.svg"
-        alt="Logo Alura"
-      />
-    </a>
-    <Text variant="paragraph1" tag="p" color="text.primary">
-      Orgulhosamente criado durante o{' '}
-      <a href="https://www.alura.com.br/">
-        <Text variant="paragraph1" tag="span" color="text.head1">
-          Bootcamp Alura JAM Stack
+  return (
+    <FooterWrapper {...props}>
+      {isMounted && (
+        <ReactTooltip
+          type={title === 'dark' ? 'light' : 'dark'}
+          effect="solid"
+          delayHide={300}
+          border
+          borderColor={colors.borders.primary.color}
+          arrowColor={colors.borders.primary.color}
+        />
+      )}
+      <Box>
+        <Text
+          color="background.main"
+          tag="a"
+          href="https://github.com/pmdpaula"
+          variant="title"
+          style={{ padding: '0 9px' }}
+          data-tip="GitHub"
+        >
+          <FaIcons.FaGithubAlt />
         </Text>
-      </a>
-    </Text>
-  </FooterWrapper>
-);
+
+        <Text
+          color="background.main"
+          tag="a"
+          href="https://www.linkedin.com/in/pmdpaula/"
+          variant="title"
+          style={{ padding: '0 9px' }}
+          data-tip="LinkedIn"
+        >
+          <FaIcons.FaLinkedin />
+        </Text>
+      </Box>
+    </FooterWrapper>
+  );
+};
 
 export default Footer;

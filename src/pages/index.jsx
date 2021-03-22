@@ -9,6 +9,7 @@ import Button from '../components/commons/Button';
 import Grid from '../components/foundation/layout/Grid';
 import Box from '../components/foundation/layout/Box';
 import Navbar from '../components/commons/Navbar';
+import websitePageHOC from '../components/wrappers/WebsitePage/hoc/index';
 
 // interface Props {
 //   toggleTheme(): void;
@@ -25,8 +26,8 @@ const Home = ({ toggleTheme }) => (
     // backgroundRepeat="no-repeat"
     // backgroundPosition="bottom right"
   >
-    <Navbar />
-    <Menu toggleTheme={toggleTheme} />
+    {/* <Navbar /> */}
+    {/* <Menu toggleTheme={toggleTheme} /> */}
 
     <Grid.Container
       marginTop={{
@@ -110,11 +111,23 @@ const Home = ({ toggleTheme }) => (
       </Grid.Row>
     </Grid.Container>
 
-    <Footer />
+    {/* <Footer /> */}
   </Box>
 );
 
-export default Home;
+export default websitePageHOC(Home, {
+  pageWrapperProps: {
+    seoProps: {
+      headTitle: 'Home',
+    },
+    menuProps: {
+      display: true,
+    },
+    footerProps: {
+      display: true,
+    },
+  },
+});
 
 Home.propTypes = {
   toggleTheme: PropTypes.func.isRequired,

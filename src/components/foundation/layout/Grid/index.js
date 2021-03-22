@@ -103,11 +103,11 @@ Col.defaultProps = {
 const Grid = {
   Container: styled.div`
     width: 100%;
-    padding-right: 28px;
-    padding-left: 28px;
+    padding-right: 2.4rem;
+    padding-left: 2.4rem;
     margin-right: auto;
     margin-left: auto;
-    ${breakpointsMedia({
+    /* ${breakpointsMedia({
       xs: css`
         max-width: initial;
       `,
@@ -125,7 +125,7 @@ const Grid = {
       xl: css`
         max-width: 1222px;
       `,
-    })}
+    })} */
 
     ${propToStyle('marginTop')}
   `,

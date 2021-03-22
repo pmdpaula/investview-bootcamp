@@ -1,24 +1,26 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import { createContext, useState } from 'react';
+
+import SEO from '../../commons/SEO';
 import Footer from '../../commons/Footer';
 import Menu from '../../commons/Menu';
 import Modal from '../../commons/Modal';
-import SEO from '../../commons/SEO';
-import Grid from '../../foundation/layout/Grid/index';
 
-export const WebsitePageContext = React.createContext({
+import Grid from '../../foundation/layout/Grid/index';
+import Text from '../../foundation/Text/index';
+import Navbar from '../../commons/Navbar/index';
+
+export const WebsitePageContext = createContext({
   toggleModalCadastro: () => {},
 });
 
 export default function WebsitePageWrapper({
   children,
   seoProps,
-  // pageBoxProps,
-  bgAnimationProps,
   menuProps,
   footerProps,
 }) {
-  const [isModalOpen, setModalState] = React.useState(false);
+  const [isModalOpen, setModalState] = useState(false);
 
   return (
     <WebsitePageContext.Provider
@@ -34,7 +36,7 @@ export default function WebsitePageWrapper({
         display="flex"
         flex="1"
         flexDirection="column"
-        alignItens="space-around"
+        // alignItens="space-around"
       >
         <Modal
           isOpen={isModalOpen}
@@ -42,10 +44,14 @@ export default function WebsitePageWrapper({
             setModalState(false);
           }}
         >
-          Modal
+          {propsDoModal => <Text propsDoModal={propsDoModal}>Modal</Text>}
         </Modal>
         {menuProps.display && (
-          <Menu
+          // <Menu
+          //   onCadastrarClick={() => setModalState(true)}
+          //   show={menuProps.display}
+          // />
+          <Navbar
             onCadastrarClick={() => setModalState(true)}
             show={menuProps.display}
           />
@@ -66,14 +72,6 @@ WebsitePageWrapper.defaultProps = {
   footerProps: {
     display: true,
   },
-  bgAnimationProps: {
-    numberOfBlocks: 30,
-    duration: 20,
-    direction: 'normal',
-    easing: 'linear',
-    dispersion: 400,
-    loop: false,
-  },
 };
 
 WebsitePageWrapper.propTypes = {
@@ -90,14 +88,6 @@ WebsitePageWrapper.propTypes = {
     backgroundImage: PropTypes.string,
     backgroundRepeat: PropTypes.string,
     backgroundPosition: PropTypes.string,
-  }),
-  bgAnimationProps: PropTypes.shape({
-    numberOfBlocks: PropTypes.number,
-    duration: PropTypes.number,
-    direction: PropTypes.string,
-    easing: PropTypes.string,
-    dispersion: PropTypes.number,
-    loop: PropTypes.bool,
   }),
   children: PropTypes.node.isRequired,
 };
