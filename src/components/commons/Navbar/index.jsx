@@ -41,7 +41,8 @@ const Navbar = () => {
               return (
                 <NavMenu.Item key={itemKey} onClick={toggleSidebar}>
                   <Link href={item.path}>
-                    {item.icon} <span>{item.title}</span>
+                    {item.icon}
+                    <span>{item.title}</span>
                   </Link>
                 </NavMenu.Item>
               );

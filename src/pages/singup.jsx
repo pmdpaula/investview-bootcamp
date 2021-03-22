@@ -29,12 +29,7 @@ const SingUp = ({ toggleTheme }) => (
   >
     <Menu toggleTheme={toggleTheme} />
 
-    <Grid.Container
-    // top={10}
-    // display="relative"
-    // justifyContent="center"
-    // style={{ backgroundColor: '#666' }}
-    >
+    <Grid.Container>
       <Grid.Row
         style={{
           display: 'flex',
