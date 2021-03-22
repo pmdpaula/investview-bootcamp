@@ -9,7 +9,7 @@
       "plugin:react/recommended",
       "airbnb",
       "eslint-config-prettier",
-      "prettier/react"
+      "prettier"
   ],
   "parser": "babel-eslint",
   "parserOptions": {
