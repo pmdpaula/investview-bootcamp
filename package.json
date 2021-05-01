@@ -12,7 +12,7 @@
     "commit": "cz"
   },
   "dependencies": {
-    "framer-motion": "^4.0.0",
+    "framer-motion": "^4.1.11",
     "lodash": "^4.17.21",
     "mongodb": "^3.6.5",
     "next": "10.0.6",
