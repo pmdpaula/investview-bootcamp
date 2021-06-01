@@ -23,7 +23,7 @@
     "react-icons": "^4.2.0",
     "react-parallax-tilt": "^1.4.90",
     "react-switch": "^6.0.0",
-    "react-tooltip": "^4.2.15",
+    "react-tooltip": "^4.2.21",
     "styled-components": "^5.2.1",
     "styled-normalize": "^8.0.7",
     "use-persisted-state": "^0.3.3"
